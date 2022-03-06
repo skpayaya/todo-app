@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Board from "./components/Board";
-import { Todo } from "./components/models/model";
+import { Todo } from "./components/models/Todo";
 
 function App() {
     const [todos, setTodos] = useState<Array<Todo>>([]);

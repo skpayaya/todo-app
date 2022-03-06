@@ -1,6 +1,7 @@
 import React from "react";
 import Column from "./Column";
-import { Todo } from "./models/model";
+import "styles/board.scss";
+import { Todo } from "./models/Todo";
 
 interface props {
     todos: Array<Todo>;
