@@ -1,7 +1,6 @@
 import React from "react";
 import Column from "./Column";
-import "styles/board.scss";
-import { Todo } from "./models/Todo";
+import { Todo } from "../models/Todo";
 
 interface props {
     todos: Array<Todo>;
@@ -20,10 +19,10 @@ const Board: React.FC<props> = ({
     setCompletedTodos,
 }) => {
     return (
-        <div>
-            <Column></Column>
-            <Column></Column>
-            <Column></Column>
+        <div className="todo-board">
+            <Column title="To Do" type="todo"></Column>
+            <Column title="In Progress" type="inProgress"></Column>
+            <Column title="Completed" type="completed"></Column>
         </div>
     );
 };
