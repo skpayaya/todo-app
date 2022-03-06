@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
-import { AiFillDelete, AiFillEdit, AiOutlineCheck } from "react-icons/ai";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { Todo } from "../models/Todo";
 interface prop {
     index: number;
@@ -32,13 +32,6 @@ const TodoItem: React.FC<prop> = ({ index, type, todo, todos, setTodos }) => {
         setEdit(false);
     };
 
-    const handleDone = (id: number) => {
-        setTodos(
-            todos.map((todo) =>
-                todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
-            )
-        );
-    };
     return (
         <Draggable draggableId={todo.id.toString()} index={index}>
             {(provided, snapshot) => (
@@ -81,12 +74,6 @@ const TodoItem: React.FC<prop> = ({ index, type, todo, todos, setTodos }) => {
                         >
                             <AiFillDelete></AiFillDelete>
                         </span>
-                        {/* <span
-                            className="todo-item__icon"
-                            onClick={() => handleDone(todo.id)}
-                        >
-                            <AiOutlineCheck></AiOutlineCheck>
-                        </span> */}
                     </div>
                 </form>
             )}
