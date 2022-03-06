@@ -10,5 +10,4 @@ Todo app with React
 
 -   Kanban board to organize todos in three columns (Todo, In Progress, Completed)
 -   Drag & drop todos across the board
--   Data persisted in LocalStorage
 -   Responsive user interface
