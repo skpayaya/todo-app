@@ -18,11 +18,33 @@ const Board: React.FC<props> = ({
     completedTodos,
     setCompletedTodos,
 }) => {
+    const arr = [
+        { title: "To Do", type: "todo", todos: todos, setTodos: setTodos },
+        {
+            title: "In Progress",
+            type: "inProgress",
+            todos: inProgressTodos,
+            setTodos: setInProgressTodos,
+        },
+        {
+            title: "Completed",
+            type: "completed",
+            todos: completedTodos,
+            setTodos: setCompletedTodos,
+        },
+    ];
     return (
         <div className="todo-board">
-            <Column title="To Do" type="todo"></Column>
-            <Column title="In Progress" type="inProgress"></Column>
-            <Column title="Completed" type="completed"></Column>
+            {arr.map((element) => {
+                return (
+                    <Column
+                        title={element.title}
+                        type={element.type}
+                        todos={element.todos}
+                        setTodos={element.setTodos}
+                    ></Column>
+                );
+            })}
         </div>
     );
 };

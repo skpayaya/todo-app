@@ -1,92 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap");
 body {
-  background-color: #282c34;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Sora', sans-serif;
+    background-color: #282c34;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Sora", sans-serif;
 }
-.todo-fab {
-  position: fixed;
-  border: none;
-  color: aqua;
-  border-radius: 50%;
-  padding: 25px;
-  font-size: 20px;
-  right: 30px;
-  bottom: 30px;
-  background-color: #4B515C;
-  
+
+.todo-header {
+    color: aqua;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
 }
-.todo-fab:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 5px rgb(207, 207, 207);
-}
-.todo-header{
-  color: aqua;
-  display: flex;
-  flex-direction: row;
-  border-bottom: 3px solid;
-  border-color: #878D99;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-}
+
 .todo-header__icon {
-  font-size: 30px;
-  background-color: #4B515C;
-  padding: 5px;
-  margin: 0 10px;
-  border-radius: 50%;
+    font-size: 30px;
+    background-color: #4b515c;
+    padding: 5px;
+    margin: 0 10px;
+    border-radius: 50%;
 }
 .todo-board {
-  display: flex;
-  align-items: center;
-  padding: 30px 0;
-  justify-content: space-evenly;
-  
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    justify-content: space-evenly;
 }
 
 .todo-column {
-  width: 25%;
-  border-radius: 5px;
-  background-color: rgb(24, 26, 27);
-  padding: 15px;
-  color: white;
+    width: 25%;
+    border-radius: 5px;
+    background-color: rgb(24, 26, 27);
+    padding: 15px;
+    color: white;
 }
 
 .todo-column--header {
-  border-bottom: 5px solid ;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 5px solid;
 }
 
 .todo {
-  border-color: rgb(30, 70, 109);
+    border-color: rgb(30, 70, 109);
 }
 .inProgress {
-  border-color: rgb(109, 30, 30);
+    border-color: rgb(109, 30, 30);
 }
 .completed {
-  border-color: rgb(30, 109, 37);
+    border-color: rgb(30, 109, 37);
 }
 
 .todo-item {
-  padding: 20px 10px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border-left: 3px solid ;
+    padding: 20px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-left: 3px solid;
+    display: flex;
+    flex-direction: row;
+}
+.todo-item__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
 }
 .todo-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 5px rgb(58, 58, 58);
+    transform: scale(1.02);
+    box-shadow: 0 0 5px rgb(58, 58, 58);
 }
 .todo-item__todo {
-  background-color: rgb(30, 32, 33);
-  border-color: rgb(30, 70, 109);
+    background-color: rgb(30, 32, 33);
+    border-color: rgb(30, 70, 109);
 }
 .todo-item__inProgress {
-  background-color: rgb(50, 13, 13);
-  border-color: rgb(109, 30, 30);
+    background-color: rgb(50, 13, 13);
+    border-color: rgb(109, 30, 30);
 }
 .todo-item__completed {
-  background-color: rgb(13, 50, 34);
-  border-color: rgb(30, 109, 37);
+    background-color: rgb(13, 50, 34);
+    border-color: rgb(30, 109, 37);
+}
+.todo-item__content-title {
+    font-weight: bold;
+}
+.todo-item__content-description {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.todo-item__icon {
+    padding: 0 5px;
+    font-size: 20px;
+}
+.todo-item__icon:hover {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* @media (max-width: 850px) {
+  .todo-column{
+    width: 95%;
+  }
+} */
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.input__box {
+    width: 100%;
+    border-radius: 50px;
+    padding: 20px 30px;
+    font-size: 25px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px black;
+}
+
+.input__box:focus {
+    box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.input_submit {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 12px;
+    border-radius: 50px;
+    right: 0px;
+    border: none;
+    font-size: 15px;
+    background-color: #2f74c0;
+    color: white;
+    transition: 0.2s all;
+    box-shadow: 0 0 10px black;
+}
+
+.input_submit:hover {
+    background-color: #388ae2;
+}
+
+.input_submit:active {
+    transform: scale(0.8);
+    box-shadow: 0 0 5px black;
 }
