@@ -1,4 +1,4 @@
-# React Todo App
+# Todo App
 
 Todo app with React
 
